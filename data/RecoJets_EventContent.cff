@@ -7,6 +7,14 @@ block RecoJetsFEVT = {
    "keep *_midPointCone7CaloJets_*_*"
   }		
 }	
+block RecoGenJetsFEVT = {
+  untracked vstring outputCommands = {
+   "keep *_iterativeCone5GenJets_*_*",
+   "keep *_ktGenJets_*_*",
+   "keep *_midPointCone5GenJets_*_*",
+   "keep *_midPointCone7GenJets_*_*"
+  }		
+}	
 
 #RECO content
 block RecoJetsRECO = {
@@ -17,6 +25,14 @@ block RecoJetsRECO = {
    "keep *_midPointCone7CaloJets_*_*"
   }		
 }	
+block RecoGenJetsRECO = {
+  untracked vstring outputCommands = {
+   "keep *_iterativeCone5GenJets_*_*",
+   "keep *_ktGenJets_*_*",
+   "keep *_midPointCone5GenJets_*_*",
+   "keep *_midPointCone7GenJets_*_*"
+  }		
+}	
 
 #AOD content
 block RecoJetsAOD = {
@@ -25,5 +41,13 @@ block RecoJetsAOD = {
    "keep *_ktCaloJets_*_*",
    "keep *_midPointCone5CaloJets_*_*",
    "keep *_midPointCone7CaloJets_*_*"
+  }		
+}	
+block RecoGenJetsAOD = {
+  untracked vstring outputCommands = {
+   "keep *_iterativeCone5GenJets_*_*",
+   "keep *_ktGenJets_*_*",
+   "keep *_midPointCone5GenJets_*_*",
+   "keep *_midPointCone7GenJets_*_*"
   }		
 }	
