@@ -4,7 +4,11 @@ block RecoJetsFEVT = {
    "keep *_iterativeCone5CaloJets_*_*",
    "keep *_ktCaloJets_*_*",
    "keep *_midPointCone5CaloJets_*_*",
-   "keep *_midPointCone7CaloJets_*_*"
+   "keep *_midPointCone7CaloJets_*_*",
+	#
+	# towers
+	#
+   "keep *_caloTowers_*_*"
   }		
 }	
 block RecoGenJetsFEVT = {
@@ -12,7 +16,11 @@ block RecoGenJetsFEVT = {
    "keep *_iterativeCone5GenJets_*_*",
    "keep *_ktGenJets_*_*",
    "keep *_midPointCone5GenJets_*_*",
-   "keep *_midPointCone7GenJets_*_*"
+   "keep *_midPointCone7GenJets_*_*",
+	#
+	# towers
+	#
+   "keep *_caloTowers_*_*"
   }		
 }	
 
@@ -22,7 +30,11 @@ block RecoJetsRECO = {
    "keep *_iterativeCone5CaloJets_*_*",
    "keep *_ktCaloJets_*_*",
    "keep *_midPointCone5CaloJets_*_*",
-   "keep *_midPointCone7CaloJets_*_*"
+   "keep *_midPointCone7CaloJets_*_*",
+	#
+	# towers
+	#
+   "keep *_caloTowers_*_*"
   }		
 }	
 block RecoGenJetsRECO = {
