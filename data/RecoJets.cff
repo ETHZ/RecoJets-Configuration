@@ -32,7 +32,8 @@ sequence caloTowersRec = { towerMaker, caloTowers }
 
   include "SimGeneral/HepPDTESSource/data/pdt.cfi"
   module genCandidates = HepMCCandidateProducer {
-      string src = "VtxSmeared"
+     string src = "VtxSmeared"
+//      string src = "source"
       untracked bool verbose = true
       bool stableOnly = true
       vstring excludeList = { }
