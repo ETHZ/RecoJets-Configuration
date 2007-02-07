@@ -30,27 +30,43 @@ sequence caloTowersRec = { towerMaker, caloTowers }
 #
 
 
+  include "PhysicsTools/HepMCCandAlgos/data/genParticleCandidates.cfi"
+  replace genParticleCandidates.src = "source"
   include "SimGeneral/HepPDTESSource/data/pdt.cfi"
-  module genCandidates = HepMCCandidateProducer {
-     string src = "VtxSmeared"
+//  module genParticleCandidates = HepMCCandidateProducerGenParticleCandidateProducer {
+//     string src = "VtxSmeared"
 //      string src = "source"
-      untracked bool verbose = true
-      bool stableOnly = true
-      vstring excludeList = { }
+//      untracked bool verbose = true
+//      bool stableOnly = true
+//      vstring excludeList = { }
+//  }
+
+  module genParticlesAllStable = GenParticleCandidateSelector {
+   string src = "genParticleCandidates"
+   bool stableOnly = true
+   untracked bool verbose = true
+   vstring excludeList = {}
+   vstring includeList = {}
   }
 
   include "RecoJets/JetProducers/data/GenJetKt.cfi"
   include "RecoJets/JetProducers/data/GenJetMcone5.cfi"
   include "RecoJets/JetProducers/data/GenJetMcone7.cfi"
   include "RecoJets/JetProducers/data/GenJetIcone5.cfi"
+  include "RecoJets/JetProducers/data/GenJetFastjet10.cfi"
+  include "RecoJets/JetProducers/data/GenJetFastjet6.cfi"
+  include "RecoJets/JetProducers/data/GenJetKt10.cfi"
 
   include "RecoJets/JetProducers/data/CaloJetKt.cfi"
   include "RecoJets/JetProducers/data/CaloJetMcone5.cfi"
   include "RecoJets/JetProducers/data/CaloJetMcone7.cfi"
   include "RecoJets/JetProducers/data/CaloJetIcone5.cfi"
+  include "RecoJets/JetProducers/data/CaloJetFastjet10.cfi"
+  include "RecoJets/JetProducers/data/CaloJetFastjet6.cfi"
+  include "RecoJets/JetProducers/data/CaloJetKt10.cfi"
   include "RecoJets/JetProducers/data/BasicJetIcone5.cfi"
 
 
-  sequence recoGenJets = { genCandidates , (ktGenJets & midPointCone5GenJets & midPointCone7GenJets & iterativeCone5GenJets) }
+  sequence recoGenJets = { genParticleCandidates , genParticlesAllStable, (ktGenJets & midPointCone5GenJets & midPointCone7GenJets & iterativeCone5GenJets & GenJetFastjet10 & GenJetFastjet6 &  GenJetKt10) }
 
-  sequence recoJets = { ktCaloJets & midPointCone5CaloJets & midPointCone7CaloJets & iterativeCone5CaloJets & iterativeCone5BasicJets }
+  sequence recoJets = { ktCaloJets & midPointCone5CaloJets & midPointCone7CaloJets & iterativeCone5CaloJets & iterativeCone5BasicJets & CaloJetFastjet10 & CaloJetFastjet6 & CaloJetKt10}
