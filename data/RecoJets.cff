@@ -1,18 +1,17 @@
+# $Id: BasicJetIcone5.cfi,v 1.3 2007/02/08 01:46:11 fedor Exp $
 #
 # also create calotowers here
 #
 
   include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
-  # Calo geometry/topology services
+
   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
 
-  #include "Geometry/CaloEventSetup/data/CaloTowerConstituents.cfi"
-  es_module = CaloTowerConstituentsMapBuilder {
-      untracked string MapFile="Geometry/CaloTopology/data/CaloTowerEEGeometric.map.gz"
-  }
+  include "Geometry/CaloEventSetup/data/CaloTowerConstituents.cfi"
 
   include "Geometry/CaloEventSetup/data/CaloTopology.cfi"
   es_module = HcalTopologyIdealEP {}
+
  
   include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
 
@@ -22,43 +21,14 @@
           double minimumEt = -1
           double minimumE = -1
   }
- 
-sequence caloTowersRec = { towerMaker, caloTowers }  
+sequence caloTowersRec = { towerMaker, caloTowers }
 
-#
-# Jets
-#
+  
+include "RecoJets/JetProducers/data/CaloJets.cfi"
+sequence recoJets = { 
+   Fastjet10CaloJet & Fastjet6CaloJet & CaloJetKt10 & iterativeCone5CaloJet & midPointCone5CaloJet & midPointCone7CaloJet 
+   & Fastjet10E1CaloJet
+}
 
-
-  include "PhysicsTools/HepMCCandAlgos/data/genParticleCandidates.cfi"
-  include "SimGeneral/HepPDTESSource/data/pdt.cfi"
-
-  module genParticlesAllStable = GenParticleCandidateSelector {
-   string src = "genParticleCandidates"
-   bool stableOnly = true
-   untracked bool verbose = true
-   vstring excludeList = {}
-   vstring includeList = {}
-  }
-
-  include "RecoJets/JetProducers/data/GenJetKt.cfi"
-  include "RecoJets/JetProducers/data/GenJetMcone5.cfi"
-  include "RecoJets/JetProducers/data/GenJetMcone7.cfi"
-  include "RecoJets/JetProducers/data/GenJetIcone5.cfi"
-  include "RecoJets/JetProducers/data/GenJetFastjet10.cfi"
-  include "RecoJets/JetProducers/data/GenJetFastjet6.cfi"
-  include "RecoJets/JetProducers/data/GenJetKt10.cfi"
-
-  include "RecoJets/JetProducers/data/CaloJetKt.cfi"
-  include "RecoJets/JetProducers/data/CaloJetMcone5.cfi"
-  include "RecoJets/JetProducers/data/CaloJetMcone7.cfi"
-  include "RecoJets/JetProducers/data/CaloJetIcone5.cfi"
-  include "RecoJets/JetProducers/data/CaloJetFastjet10.cfi"
-  include "RecoJets/JetProducers/data/CaloJetFastjet6.cfi"
-  include "RecoJets/JetProducers/data/CaloJetKt10.cfi"
-  include "RecoJets/JetProducers/data/BasicJetIcone5.cfi"
-
-
-  sequence recoGenJets = { genParticleCandidates , genParticlesAllStable, (ktGenJets & midPointCone5GenJets & midPointCone7GenJets & iterativeCone5GenJets & GenJetFastjet10 & GenJetFastjet6 &  GenJetKt10) }
-
-  sequence recoJets = { ktCaloJets & midPointCone5CaloJets & midPointCone7CaloJets & iterativeCone5CaloJets & iterativeCone5BasicJets & CaloJetFastjet10 & CaloJetFastjet6 & CaloJetKt10}
+# Temporally include GenJets as well
+include "RecoJets/Configuration/data/RecoGenJets.cff"
