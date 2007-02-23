@@ -1,4 +1,4 @@
-# $Id: RecoJets.cff,v 1.8 2007/02/16 23:25:07 fedor Exp $
+# $Id: RecoJets.cff,v 1.9 2007/02/16 23:51:10 fedor Exp $
 #
 # also create calotowers here
 #
@@ -29,7 +29,7 @@ sequence caloTowersRec = { towerMaker, caloTowers }
   
 include "RecoJets/JetProducers/data/CaloJets.cfi"
 sequence recoJets = { 
-   Fastjet10CaloJet & Fastjet6CaloJet & CaloJetKt10 & iterativeCone5CaloJet & midPointCone5CaloJet & midPointCone7CaloJet 
+   Fastjet10CaloJet & Fastjet6CaloJet & Kt10CaloJet & iterativeCone5CaloJet & midPointCone5CaloJet & midPointCone7CaloJet 
    & Fastjet10E1CaloJet
 }
 

@@ -1,74 +1,34 @@
 #Full Event content 
 block RecoJetsFEVT = {
   untracked vstring outputCommands = {
-   "keep *_iterativeCone5CaloJets_*_*",
-   "keep *_ktCaloJets_*_*",
-   "keep *_midPointCone5CaloJets_*_*",
-   "keep *_midPointCone7CaloJets_*_*",
-	#
-	# towers
-	#
+   "keep recoCaloJets_*_*_*",
    "keep *_caloTowers_*_*",
    "keep *_towerMaker_*_*"
   }		
 }	
 block RecoGenJetsFEVT = {
   untracked vstring outputCommands = {
-   "keep *_iterativeCone5GenJets_*_*",
-   "keep *_ktGenJets_*_*",
-   "keep *_midPointCone5GenJets_*_*",
-   "keep *_midPointCone7GenJets_*_*",
-	#
-	# towers
-	#
-   "keep *_caloTowers_*_*",
-   "keep *_towerMaker_*_*"
+   "keep recoGenJets_*_*_*",
+   "keep *_genParticleCandidates_*_*",
+   "keep *_genParticlesAllStable_*_*",
+   "keep *_genParticlesAllStableNoNu_*_*"
   }		
 }	
 
 #RECO content
 block RecoJetsRECO = {
-  untracked vstring outputCommands = {
-   "keep *_iterativeCone5CaloJets_*_*",
-   "keep *_ktCaloJets_*_*",
-   "keep *_midPointCone5CaloJets_*_*",
-   "keep *_midPointCone7CaloJets_*_*",
-	#
-	# towers
-	#
-   "keep *_caloTowers_*_*",
-   "keep *_towerMaker_*_*"
-  }		
-}	
+  using RecoJetsFEVT
+}
+
 block RecoGenJetsRECO = {
-  untracked vstring outputCommands = {
-   "keep *_iterativeCone5GenJets_*_*",
-   "keep *_ktGenJets_*_*",
-   "keep *_midPointCone5GenJets_*_*",
-   "keep *_midPointCone7GenJets_*_*"
-  }		
-}	
+  using RecoGenJetsFEVT
+}
 
 #AOD content
 block RecoJetsAOD = {
-  untracked vstring outputCommands = {
-   "keep *_iterativeCone5CaloJets_*_*",
-   "keep *_ktCaloJets_*_*",
-   "keep *_midPointCone5CaloJets_*_*",
-   "keep *_midPointCone7CaloJets_*_*",
-#
-# Calotowers
-#
-   "keep *_caloTowers_*_*",
-   "keep *_towerMaker_*_*"
+  using RecoJetsFEVT
+}
 
-  }		
-}	
 block RecoGenJetsAOD = {
-  untracked vstring outputCommands = {
-   "keep *_iterativeCone5GenJets_*_*",
-   "keep *_ktGenJets_*_*",
-   "keep *_midPointCone5GenJets_*_*",
-   "keep *_midPointCone7GenJets_*_*"
-  }		
-}	
+  using RecoGenJetsFEVT
+}
