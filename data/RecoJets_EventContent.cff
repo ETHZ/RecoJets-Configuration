@@ -17,18 +17,36 @@ block RecoGenJetsFEVT = {
 
 #RECO content
 block RecoJetsRECO = {
-  using RecoJetsFEVT
+  untracked vstring outputCommands = {
+   "keep recoCaloJets_*_*_*",
+   "keep *_caloTowers_*_*",
+   "keep *_towerMaker_*_*"
+  }
 }
 
 block RecoGenJetsRECO = {
-  using RecoGenJetsFEVT
+  untracked vstring outputCommands = {
+   "keep recoGenJets_*_*_*",
+   "keep *_genParticleCandidates_*_*",
+   "keep *_genParticlesAllStable_*_*",
+   "keep *_genParticlesAllStableNoNu_*_*"
+  }
 }
 
 #AOD content
 block RecoJetsAOD = {
-  using RecoJetsFEVT
+  untracked vstring outputCommands = {
+   "keep recoCaloJets_*_*_*",
+   "keep *_caloTowers_*_*",
+   "keep *_towerMaker_*_*"
+  }
 }
 
 block RecoGenJetsAOD = {
-  using RecoGenJetsFEVT
+  untracked vstring outputCommands = {
+   "keep recoGenJets_*_*_*",
+   "keep *_genParticleCandidates_*_*",
+   "keep *_genParticlesAllStable_*_*",
+   "keep *_genParticlesAllStableNoNu_*_*"
+  }
 }
