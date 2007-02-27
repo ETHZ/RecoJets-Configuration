@@ -1,4 +1,4 @@
-# $Id: RecoJets.cff,v 1.10 2007/02/23 22:33:14 fedor Exp $
+# $Id: RecoJets.cff,v 1.11 2007/02/26 21:06:09 fedor Exp $
 #
 # reconstruct CaloTowers here as well
 
@@ -6,8 +6,8 @@ include "RecoJets/Configuration/data/CaloTowersRec.cff"
   
 include "RecoJets/JetProducers/data/CaloJets.cfi"
 sequence recoJets = { 
-   Fastjet10CaloJet & Fastjet6CaloJet & Kt10CaloJet & iterativeCone5CaloJet & midPointCone5CaloJet & midPointCone7CaloJet 
-   & Fastjet10E1CaloJet
+   Fastjet10CaloJets & Fastjet6CaloJets & Kt10CaloJets & iterativeCone5CaloJets & iterativeCone7CaloJets &  midPointCone5CaloJets & midPointCone7CaloJets 
+   & Fastjet10E1CaloJets
 }
 
 # Temporally include GenJets as well

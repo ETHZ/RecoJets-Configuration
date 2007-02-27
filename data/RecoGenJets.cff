@@ -1,4 +1,4 @@
-# $Id: BasicJetIcone5.cfi,v 1.3 2007/02/08 01:46:11 fedor Exp $
+# $Id: RecoGenJets.cff,v 1.3 2007/02/16 23:25:07 fedor Exp $
 
   include "PhysicsTools/HepMCCandAlgos/data/genParticleCandidatesFast.cfi"
   include "SimGeneral/HepPDTESSource/data/pdt.cfi"
@@ -24,7 +24,7 @@
   sequence recoGenJets = { 
       genParticleCandidates , 
       (genParticlesAllStable, 
-      (Fastjet10GenJet & Fastjet6GenJet & Kt10GenJet & iterativeCone5GenJet & midPointCone5GenJet & midPointCone7GenJet)),
+      (Fastjet10GenJets & Fastjet6GenJets & Kt10GenJets & iterativeCone5GenJets & iterativeCone7GenJets & midPointCone5GenJets & midPointCone7GenJets)),
       (genParticlesAllStableNoNu, 
-      (Fastjet10GenJetNoNu & Fastjet6GenJetNoNu & Kt10GenJetNoNu & iterativeCone5GenJetNoNu & midPointCone5GenJetNoNu & midPointCone7GenJetNoNu))
+      (Fastjet10GenJetsNoNu & Fastjet6GenJetsNoNu & Kt10GenJetsNoNu & iterativeCone5GenJetsNoNu & iterativeCone7GenJetsNoNu & midPointCone5GenJetsNoNu & midPointCone7GenJetsNoNu))
   }
