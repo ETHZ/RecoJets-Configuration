@@ -1,4 +1,4 @@
-# $Id: RecoGenJets.cff,v 1.5 2007/03/02 18:02:56 rahatlou Exp $
+# $Id: RecoGenJets.cff,v 1.6 2007/03/22 09:27:20 fedor Exp $
 
   include "PhysicsTools/HepMCCandAlgos/data/genParticleCandidatesFast.cfi"
   include "SimGeneral/HepPDTESSource/data/pythiapdt.cfi"
@@ -16,7 +16,7 @@
    bool stableOnly = true
    untracked bool verbose = true
    vstring excludeList = {"nu_e", "nu_mu", "nu_tau",
-                          "~nu_eL", "~nu_muL", "~nu_tauL", 
+                          "~chi_10", 
                           "~nu_eR", "~nu_muR", "~nu_tauR", 
 			  "Graviton", "~Gravitino", 
                           "nu_Re", "nu_Rmu", "nu_Rtau", 
