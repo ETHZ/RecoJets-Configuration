@@ -1,0 +1,36 @@
+#
+# $Id: $
+#
+# ShR 27 Mar 07: move modules producing candidates for Jets from RecoGenJets.cff
+# 
+#
+  include "PhysicsTools/HepMCCandAlgos/data/genParticleCandidatesFast.cfi"
+  include "SimGeneral/HepPDTESSource/data/pythiapdt.cfi"
+
+  module genParticlesAllStable = GenParticleCandidateSelector {
+   string src = "genParticleCandidates"
+   bool stableOnly = true
+   untracked bool verbose = true
+   vstring excludeList = {}
+   vstring includeList = {}
+  }
+
+  module genParticlesAllStableNoNu = GenParticleCandidateSelector {
+   string src = "genParticleCandidates"
+   bool stableOnly = true
+   untracked bool verbose = true
+   vstring excludeList = {"nu_e", "nu_mu", "nu_tau",
+                          "~chi_10", 
+                          "~nu_eR", "~nu_muR", "~nu_tauR", 
+			  "Graviton", "~Gravitino", 
+                          "nu_Re", "nu_Rmu", "nu_Rtau", 
+                          "nu*_e0", "Graviton*"
+                         }
+   vstring includeList = {}
+  }
+
+# ShR 27 Mar 2007
+# NB: genJetParticles sequence MUST be executed before recoGenJets and recoGenMET
+# See example in  Configuration/StandardSequences/data/RecoSim.cff
+#
+sequence genJetParticles  = { genParticleCandidates, genParticlesAllStable , genParticlesAllStableNoNu }

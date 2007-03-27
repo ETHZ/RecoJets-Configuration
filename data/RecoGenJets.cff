@@ -1,36 +1,16 @@
-# $Id: RecoGenJets.cff,v 1.6 2007/03/22 09:27:20 fedor Exp $
+# $Id: RecoGenJets.cff,v 1.7 2007/03/22 19:58:51 fedor Exp $
+#
+# ShR 27 Mar 07: move modules producing candidates for Jets into separate cff file due to scheduling problem
+#
+include "RecoJets/Configuration/data/GenJetParticles.cff"
+include "RecoJets/JetProducers/data/GenJets.cfi"
 
-  include "PhysicsTools/HepMCCandAlgos/data/genParticleCandidatesFast.cfi"
-  include "SimGeneral/HepPDTESSource/data/pythiapdt.cfi"
+sequence jetsWithAll = {Fastjet10GenJets & Fastjet6GenJets & Kt10GenJets & iterativeCone5GenJets & iterativeCone7GenJets & midPointCone5GenJets & midPointCone7GenJets}
+sequence jetsNoNu    = {Fastjet10GenJetsNoNu & Fastjet6GenJetsNoNu & Kt10GenJetsNoNu & iterativeCone5GenJetsNoNu & iterativeCone7GenJetsNoNu & midPointCone5GenJetsNoNu & midPointCone7GenJetsNoNu }
 
-  module genParticlesAllStable = GenParticleCandidateSelector {
-   string src = "genParticleCandidates"
-   bool stableOnly = true
-   untracked bool verbose = true
-   vstring excludeList = {}
-   vstring includeList = {}
-  }
-
-  module genParticlesAllStableNoNu = GenParticleCandidateSelector {
-   string src = "genParticleCandidates"
-   bool stableOnly = true
-   untracked bool verbose = true
-   vstring excludeList = {"nu_e", "nu_mu", "nu_tau",
-                          "~chi_10", 
-                          "~nu_eR", "~nu_muR", "~nu_tauR", 
-			  "Graviton", "~Gravitino", 
-                          "nu_Re", "nu_Rmu", "nu_Rtau", 
-                          "nu*_e0", "Graviton*"
-                         }
-   vstring includeList = {}
-  }
-
-  include "RecoJets/JetProducers/data/GenJets.cfi"
-
-  sequence recoGenJets = { 
-      genParticleCandidates , 
-      (genParticlesAllStable, 
-      (Fastjet10GenJets & Fastjet6GenJets & Kt10GenJets & iterativeCone5GenJets & iterativeCone7GenJets & midPointCone5GenJets & midPointCone7GenJets)),
-      (genParticlesAllStableNoNu, 
-      (Fastjet10GenJetsNoNu & Fastjet6GenJetsNoNu & Kt10GenJetsNoNu & iterativeCone5GenJetsNoNu & iterativeCone7GenJetsNoNu & midPointCone5GenJetsNoNu & midPointCone7GenJetsNoNu))
-  }
+# ShR 27 Mar 2007
+# NB: genJetParticles sequence MUST be executed before this one but we cannot add it here
+# since causes scheduling conflicts with modules from MET
+sequence recoGenJets = {
+    jetsWithAll, jetsNoNu
+}
