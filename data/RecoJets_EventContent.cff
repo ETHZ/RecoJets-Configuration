@@ -45,8 +45,6 @@ block RecoJetsAOD = {
 block RecoGenJetsAOD = {
   untracked vstring outputCommands = {
    "keep recoGenJets_*_*_*",
-   "keep *_genParticleCandidates_*_*",
-   "keep *_genParticlesAllStable_*_*",
-   "keep *_genParticlesAllStableNoNu_*_*"
+   "keep *_genParticleCandidates_*_*"
   }
 }
