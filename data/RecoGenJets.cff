@@ -1,16 +1,36 @@
-# $Id: RecoGenJets.cff,v 1.7 2007/03/22 19:58:51 fedor Exp $
+# $Id: RecoGenJets.cff,v 1.8 2007/03/27 21:20:54 rahatlou Exp $
 #
 # ShR 27 Mar 07: move modules producing candidates for Jets into separate cff file due to scheduling problem
 #
 include "RecoJets/Configuration/data/GenJetParticles.cff"
-include "RecoJets/JetProducers/data/GenJets.cfi"
+include "RecoJets/JetProducers/data/fastjet6GenJets.cff"
+include "RecoJets/JetProducers/data/iterativeCone5GenJets.cff"
+include "RecoJets/JetProducers/data/iterativeCone7GenJets.cff"
+include "RecoJets/JetProducers/data/midPointCone5GenJets.cff"
+include "RecoJets/JetProducers/data/midPointCone7GenJets.cff"
+include "RecoJets/JetProducers/data/fastjet6GenJetsNoNuBSM.cff"
+include "RecoJets/JetProducers/data/iterativeCone5GenJetsNoNuBSM.cff"
+include "RecoJets/JetProducers/data/iterativeCone7GenJetsNoNuBSM.cff"
+include "RecoJets/JetProducers/data/midPointCone5GenJetsNoNuBSM.cff"
+include "RecoJets/JetProducers/data/midPointCone7GenJetsNoNuBSM.cff"
 
-sequence jetsWithAll = {Fastjet10GenJets & Fastjet6GenJets & Kt10GenJets & iterativeCone5GenJets & iterativeCone7GenJets & midPointCone5GenJets & midPointCone7GenJets}
-sequence jetsNoNu    = {Fastjet10GenJetsNoNu & Fastjet6GenJetsNoNu & Kt10GenJetsNoNu & iterativeCone5GenJetsNoNu & iterativeCone7GenJetsNoNu & midPointCone5GenJetsNoNu & midPointCone7GenJetsNoNu }
+
+sequence jetsWithAll = {
+       fastjet6GenJets &
+       iterativeCone5GenJets & iterativeCone7GenJets & 
+       midPointCone5GenJets & midPointCone7GenJets
+}
+
+sequence jetsNoNuBSM = {
+       fastjet6GenJetsNoNuBSM &
+       iterativeCone5GenJetsNoNuBSM & iterativeCone7GenJetsNoNuBSM & 
+       midPointCone5GenJetsNoNuBSM & midPointCone7GenJetsNoNuBSM
+}
+
 
 # ShR 27 Mar 2007
 # NB: genJetParticles sequence MUST be executed before this one but we cannot add it here
 # since causes scheduling conflicts with modules from MET
 sequence recoGenJets = {
-    jetsWithAll, jetsNoNu
+    jetsWithAll, jetsNoNuBSM
 }
