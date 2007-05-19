@@ -1,5 +1,5 @@
 #
-# $Id: $
+# $Id: GenJetParticles.cff,v 1.1 2007/03/27 21:20:54 rahatlou Exp $
 #
 # ShR 27 Mar 07: move modules producing candidates for Jets from RecoGenJets.cff
 # 
@@ -10,15 +10,15 @@
   module genParticlesAllStable = GenParticleCandidateSelector {
    string src = "genParticleCandidates"
    bool stableOnly = true
-   untracked bool verbose = true
+   untracked bool verbose = false
    vstring excludeList = {}
    vstring includeList = {}
   }
 
-  module genParticlesAllStableNoNu = GenParticleCandidateSelector {
+  module genParticlesAllStableNoNuBSM = GenParticleCandidateSelector {
    string src = "genParticleCandidates"
    bool stableOnly = true
-   untracked bool verbose = true
+   untracked bool verbose = false
    vstring excludeList = {"nu_e", "nu_mu", "nu_tau",
                           "~chi_10", 
                           "~nu_eR", "~nu_muR", "~nu_tauR", 
@@ -33,4 +33,4 @@
 # NB: genJetParticles sequence MUST be executed before recoGenJets and recoGenMET
 # See example in  Configuration/StandardSequences/data/RecoSim.cff
 #
-sequence genJetParticles  = { genParticleCandidates, genParticlesAllStable , genParticlesAllStableNoNu }
+sequence genJetParticles  = { genParticleCandidates, genParticlesAllStable , genParticlesAllStableNoNuBSM }
