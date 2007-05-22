@@ -1,5 +1,5 @@
 #
-# $Id: GenJetParticles.cff,v 1.1 2007/03/27 21:20:54 rahatlou Exp $
+# $Id: GenJetParticles.cff,v 1.2 2007/05/19 04:42:15 fedor Exp $
 #
 # ShR 27 Mar 07: move modules producing candidates for Jets from RecoGenJets.cff
 # 
@@ -33,4 +33,4 @@
 # NB: genJetParticles sequence MUST be executed before recoGenJets and recoGenMET
 # See example in  Configuration/StandardSequences/data/RecoSim.cff
 #
-sequence genJetParticles  = { genParticleCandidates, genParticlesAllStable , genParticlesAllStableNoNuBSM }
+sequence genJetParticles  = { genParticleCandidates, (genParticlesAllStable & genParticlesAllStableNoNuBSM) }
