@@ -14,10 +14,10 @@ include "RecoJets/JetProducers/data/sisCone7CaloJets.cff"
 include "RecoJets/JetProducers/data/cdfMidpointCone5CaloJets.cff"
 
 
-sequence recoJets = {
+sequence recoJetsAll = {
    kt6CaloJets & kt10CaloJets & kt10E1CaloJets & 
    iterativeCone5CaloJets & iterativeCone7CaloJets &  
    midPointCone5CaloJets & midPointCone7CaloJets & 
    sisCone5CaloJets & sisCone7CaloJets & 
-   cdfMidointCone5CaloJets
+   cdfMidpointCone5CaloJets
 }
