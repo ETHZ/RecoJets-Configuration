@@ -16,9 +16,9 @@ block RecoGenJetsFEVT = {
 #RECO content
 block RecoJetsRECO = {
   untracked vstring outputCommands = {
-     "keep *_fastjet6CaloJets_*_*",
-     "keep *_fastjet10E1CaloJets_*_*",
-     "keep *_fastjet10CaloJets_*_*",
+     "keep *_kt6CaloJets_*_*",
+     "keep *_kt10E1CaloJets_*_*",
+     "keep *_kt10CaloJets_*_*",
      "keep *_iterativeCone5CaloJets_*_*",
      "keep *_iterativeCone7CaloJets_*_*",
      "keep *_midPointCone5CaloJets_*_*",
@@ -31,15 +31,15 @@ block RecoJetsRECO = {
 
 block RecoGenJetsRECO = {
   untracked vstring outputCommands = {
-     "keep *_fastjet6GenJets_*_*",
-     "keep *_fastjet10GenJets_*_*",
+     "keep *_kt6GenJets_*_*",
+     "keep *_kt10GenJets_*_*",
      "keep *_iterativeCone5GenJets_*_*",
      "keep *_iterativeCone7GenJets_*_*",
      "keep *_midPointCone5GenJets_*_*",
      "keep *_midPointCone7GenJets_*_*",
 
-     "keep *_fastjet6GenJetsNoNuBSM_*_*",
-     "keep *_fastjet10GenJetsNoNuBSM_*_*",
+     "keep *_kt6GenJetsNoNuBSM_*_*",
+     "keep *_kt10GenJetsNoNuBSM_*_*",
      "keep *_iterativeCone5GenJetsNoNuBSM_*_*",
      "keep *_iterativeCone7GenJetsNoNuBSM_*_*",
      "keep *_midPointCone5GenJetsNoNuBSM_*_*",
@@ -52,7 +52,7 @@ block RecoGenJetsRECO = {
 #AOD content
 block RecoJetsAOD = {
   untracked vstring outputCommands = {
-     "keep *_fastjet6CaloJets_*_*",
+     "keep *_kt6CaloJets_*_*",
      "keep *_iterativeCone5CaloJets_*_*",
      "keep *_iterativeCone7CaloJets_*_*",
      "keep *_midPointCone5CaloJets_*_*",
@@ -65,13 +65,13 @@ block RecoJetsAOD = {
 
 block RecoGenJetsAOD = {
   untracked vstring outputCommands = {
-     "keep *_fastjet6GenJetsPt10_*_*",
+     "keep *_kt6GenJetsPt10_*_*",
      "keep *_iterativeCone5GenJetsPt10_*_*",
      "keep *_iterativeCone7GenJetsPt10_*_*",
      "keep *_midPointCone5GenJetsPt10_*_*",
      "keep *_midPointCone7GenJetsPt10_*_*",
 
-     "keep *_fastjet6GenJetsNoNuBSM_*_*",
+     "keep *_kt6GenJetsNoNuBSM_*_*",
      "keep *_iterativeCone5GenJetsNoNuBSM_*_*",
      "keep *_iterativeCone7GenJetsNoNuBSM_*_*",
      "keep *_midPointCone5GenJetsNoNuBSM_*_*",
