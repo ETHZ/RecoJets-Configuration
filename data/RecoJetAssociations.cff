@@ -1,11 +1,11 @@
-# $Id: RecoJets.cff,v 1.17 2007/08/03 22:53:49 fedor Exp $
+# $Id: RecoJetAssociations.cff,v 1.1 2007/09/12 00:42:17 fedor Exp $
 #
 # Associate reconstructed jets with other objects
 
-include "RecoJets/JetAssociationProducers/data/ic5JetToTracksAssociator.cfi"
-include "RecoJets/JetAssociationProducers/data/ic5JetToTracksAssociatorAtCaloFace.cfi"
+include "RecoJets/JetAssociationProducers/data/ic5JetTracksAssociatorInVertex.cfi"
+include "RecoJets/JetAssociationProducers/data/ic5JetTracksAssociatorAtCaloFace.cff"
 include "RecoJets/JetAssociationProducers/data/ic5JetExtender.cfi"
 
-sequence ic5RecoJetAssociations = {(ic5JetToTracksAssociator & ic5JetToTracksAssociatorAtCaloFace), ic5JetExtender}
+sequence ic5RecoJetAssociations = {(ic5JetTracksAssociatorInVertex & ic5JetTracksAssociatorAtCaloFace), ic5JetExtender}
 
 sequence recoJetAssociations = {ic5RecoJetAssociations}
