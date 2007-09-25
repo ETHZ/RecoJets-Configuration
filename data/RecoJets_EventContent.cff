@@ -3,7 +3,8 @@ block RecoJetsFEVT = {
   untracked vstring outputCommands = {
    "keep recoCaloJets_*_*_*",
    "keep *_caloTowers_*_*",
-   "keep *_towerMaker_*_*"
+   "keep *_towerMaker_*_*",
+   "keep *_ic5JetTracksAssociatorAtVertex_*_*"
   }		
 }	
 block RecoGenJetsFEVT = {
@@ -23,7 +24,7 @@ block RecoJetsRECO = {
      "keep *_iterativeCone7CaloJets_*_*",
      "keep *_midPointCone5CaloJets_*_*",
      "keep *_midPointCone7CaloJets_*_*",
-
+   "keep *_ic5JetTracksAssociatorAtVertex_*_*",
      "keep *_caloTowers_*_*",
      "keep *_towerMaker_*_*"
   }
@@ -57,7 +58,7 @@ block RecoJetsAOD = {
      "keep *_iterativeCone7CaloJets_*_*",
      "keep *_midPointCone5CaloJets_*_*",
      "keep *_midPointCone7CaloJets_*_*",
-
+   "keep *_ic5JetTracksAssociatorAtVertex_*_*",
      "keep *_caloTowers_*_*",
      "keep *_towerMaker_*_*"
   }
