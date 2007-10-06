@@ -1,0 +1,7 @@
+include "RecoParticleFlow/PFProducer/data/particleFlow.cfi"
+include "RecoJets/JetProducers/data/kt10PFJets.cff"
+include "RecoJets/JetProducers/data/iterativeCone5PFJets.cff"
+include "RecoJets/JetProducers/data/midPointCone5PFJets.cff"
+
+sequence recoPFJets = {kt10PFJets & iterativeCone5PFJets & midPointCone5PFJets}
+
