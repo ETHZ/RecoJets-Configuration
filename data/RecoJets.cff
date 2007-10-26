@@ -1,7 +1,8 @@
-# $Id: RecoJets.cff,v 1.16 2007/08/02 21:47:55 fedor Exp $
+# $Id: RecoJets.cff,v 1.17 2007/08/03 22:53:49 fedor Exp $
 #
 # reconstruct CaloTowers here as well
 
+include "RecoJets/JetProducers/data/kt4CaloJets.cff"
 include "RecoJets/JetProducers/data/kt6CaloJets.cff"
 include "RecoJets/JetProducers/data/kt10CaloJets.cff"
 include "RecoJets/JetProducers/data/kt10E1CaloJets.cff"
@@ -9,10 +10,13 @@ include "RecoJets/JetProducers/data/iterativeCone5CaloJets.cff"
 include "RecoJets/JetProducers/data/iterativeCone7CaloJets.cff"
 include "RecoJets/JetProducers/data/midPointCone5CaloJets.cff"
 include "RecoJets/JetProducers/data/midPointCone7CaloJets.cff"
+include "RecoJets/JetProducers/data/sisCone5CaloJets.cff"
+include "RecoJets/JetProducers/data/sisCone7CaloJets.cff"
 
 
 sequence recoJets = {
-   kt6CaloJets & kt10CaloJets & kt10E1CaloJets & 
+   kt10CaloJets & kt10E1CaloJets & kt4CaloJets & kt6CaloJets &  
    iterativeCone5CaloJets & iterativeCone7CaloJets &  
-   midPointCone5CaloJets & midPointCone7CaloJets
+   midPointCone5CaloJets & midPointCone7CaloJets &
+   sisCone5CaloJets & sisCone7CaloJets
 }
