@@ -22,7 +22,7 @@ block RecoJetsFEVT = {
 block RecoGenJetsFEVT = {
   untracked vstring outputCommands = {
    "keep recoGenJets_*_*_*",
-   "keep *_genParticleCandidates_*_*"
+   "keep *_genParticle_*_*"
   }		
 }	
 
