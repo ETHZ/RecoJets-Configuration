@@ -1,5 +1,5 @@
 #
-# $Id: GenJetParticles.cff,v 1.3 2007/05/22 01:10:47 fedor Exp $
+# $Id: GenJetParticles.cff,v 1.4 2008/02/16 14:38:58 oehler Exp $
 #
 # ShR 27 Mar 07: move modules producing candidates for Jets from RecoGenJets.cff
 # 
@@ -15,19 +15,19 @@
 #   vstring includeList = {}
 #  }
 
-#  module genParticlesAllStableNoNuBSM = GenParticleCandidateSelector {
-#   string src = "genParticleCandidates"
-#   bool stableOnly = true
-#   untracked bool verbose = false
-#   vstring excludeList = {"nu_e", "nu_mu", "nu_tau",
-#                          "~chi_10", 
-#                          "~nu_eR", "~nu_muR", "~nu_tauR", 
-#			  "Graviton", "~Gravitino", 
-#                          "nu_Re", "nu_Rmu", "nu_Rtau", 
-#                          "nu*_e0", "Graviton*"
-#                         }
-#   vstring includeList = {}
-#  }
+  module genParticlesAllStableNoNuBSM = GenJetParticleRefSelector {
+   string src = "genParticles"
+   bool stableOnly = true
+   untracked bool verbose = false
+   vstring excludeList = {"nu_e", "nu_mu", "nu_tau",
+                          "~chi_10", 
+                          "~nu_eR", "~nu_muR", "~nu_tauR", 
+			  "Graviton", "~Gravitino", 
+                          "nu_Re", "nu_Rmu", "nu_Rtau", 
+                          "nu*_e0", "Graviton*"
+                         }
+   vstring includeList = {}
+  }
 
    module genParticlesAllStable = GenJetParticleRefSelector {
            InputTag src = "genParticles"
@@ -43,4 +43,4 @@
 # See example in  Configuration/StandardSequences/data/RecoSim.cff
 #
 #sequence genJetParticles  = { genParticleCandidates, (genParticlesAllStable & genParticlesAllStableNoNuBSM) }
-sequence genJetParticles  = { genParticle, genParticlesAllStable }
+sequence genJetParticles  = { genParticles, (genParticlesAllStable & genParticlesAllStableNoNuBSM) }
