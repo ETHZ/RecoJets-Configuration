@@ -1,5 +1,5 @@
 #
-# $Id: GenJetParticles.cff,v 1.4 2008/02/16 14:38:58 oehler Exp $
+# $Id: GenJetParticles.cff,v 1.5 2008/02/25 15:41:43 oehler Exp $
 #
 # ShR 27 Mar 07: move modules producing candidates for Jets from RecoGenJets.cff
 # 
@@ -16,7 +16,7 @@
 #  }
 
   module genParticlesAllStableNoNuBSM = GenJetParticleRefSelector {
-   string src = "genParticles"
+   InputTag src = "genParticles"
    bool stableOnly = true
    untracked bool verbose = false
    vstring excludeList = {"nu_e", "nu_mu", "nu_tau",
@@ -43,4 +43,4 @@
 # See example in  Configuration/StandardSequences/data/RecoSim.cff
 #
 #sequence genJetParticles  = { genParticleCandidates, (genParticlesAllStable & genParticlesAllStableNoNuBSM) }
-sequence genJetParticles  = { genParticles, (genParticlesAllStable & genParticlesAllStableNoNuBSM) }
+sequence genJetParticles  = { genParticlesAllStable & genParticlesAllStableNoNuBSM }

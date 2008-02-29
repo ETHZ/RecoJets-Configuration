@@ -1,4 +1,4 @@
-# $Id: RecoJetAssociations.cff,v 1.3 2007/09/20 22:35:13 fedor Exp $
+# $Id: RecoJetAssociations.cff,v 1.4 2007/10/26 22:33:18 fedor Exp $
 #
 # Associate reconstructed jets with other objects
 
@@ -6,8 +6,7 @@
 include "RecoJets/JetAssociationProducers/data/ic5JetTracksAssociatorAtVertex.cfi"
 # standard associations
 include "RecoJets/JetAssociationProducers/data/iterativeCone5JTA.cff"
-include "RecoJets/JetAssociationProducers/data/midPointCone5JTA.cff"
 include "RecoJets/JetAssociationProducers/data/sisCone5JTA.cff"
 include "RecoJets/JetAssociationProducers/data/kt4JTA.cff"
 
-sequence recoJetAssociations = {ic5JetTracksAssociatorAtVertex, iterativeCone5JTA & midPointCone5JTA & sisCone5JTA & kt4JTA}
+sequence recoJetAssociations = {ic5JetTracksAssociatorAtVertex, iterativeCone5JTA & sisCone5JTA & kt4JTA}

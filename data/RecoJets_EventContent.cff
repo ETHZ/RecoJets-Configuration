@@ -8,9 +8,6 @@ block RecoJetsFEVT = {
    "keep *_iterativeCone5JetTracksAssociatorAtVertex_*_*",
    "keep *_iterativeCone5JetTracksAssociatorAtCaloFace_*_*",
    "keep *_iterativeCone5JetExtender_*_*",
-   "keep *_midPointCone5JetTracksAssociatorAtVertex_*_*",
-   "keep *_midPointCone5JetTracksAssociatorAtCaloFace_*_*",
-   "keep *_midPointCone5JetExtender_*_*",
    "keep *_sisCone5JetTracksAssociatorAtVertex_*_*",
    "keep *_sisCone5JetTracksAssociatorAtCaloFace_*_*",
    "keep *_sisCone5JetExtender_*_*",
@@ -31,12 +28,7 @@ block RecoJetsRECO = {
   untracked vstring outputCommands = {
      "keep *_kt4CaloJets_*_*",
      "keep *_kt6CaloJets_*_*",
-     "keep *_kt10E1CaloJets_*_*",
-     "keep *_kt10CaloJets_*_*",
      "keep *_iterativeCone5CaloJets_*_*",
-     "keep *_iterativeCone7CaloJets_*_*",
-     "keep *_midPointCone5CaloJets_*_*",
-     "keep *_midPointCone7CaloJets_*_*",
      "keep *_sisCone5CaloJets_*_*",
      "keep *_sisCone7CaloJets_*_*",
      "keep *_caloTowers_*_*",
@@ -45,9 +37,6 @@ block RecoJetsRECO = {
      "keep *_iterativeCone5JetTracksAssociatorAtVertex_*_*",
      "keep *_iterativeCone5JetTracksAssociatorAtCaloFace_*_*",
      "keep *_iterativeCone5JetExtender_*_*",
-     "keep *_midPointCone5JetTracksAssociatorAtVertex_*_*",
-     "keep *_midPointCone5JetTracksAssociatorAtCaloFace_*_*",
-     "keep *_midPointCone5JetExtender_*_*",
      "keep *_sisCone5JetTracksAssociatorAtVertex_*_*",
      "keep *_sisCone5JetTracksAssociatorAtCaloFace_*_*",
      "keep *_sisCone5JetExtender_*_*",
@@ -61,25 +50,17 @@ block RecoGenJetsRECO = {
   untracked vstring outputCommands = {
      "keep *_kt4GenJets_*_*",
      "keep *_kt6GenJets_*_*",
-     "keep *_kt10GenJets_*_*",
      "keep *_iterativeCone5GenJets_*_*",
-     "keep *_iterativeCone7GenJets_*_*",
-     "keep *_midPointCone5GenJets_*_*",
-     "keep *_midPointCone7GenJets_*_*",
      "keep *_sisCone5GenJets_*_*",
      "keep *_sisCone7GenJets_*_*",
 
      "keep *_kt4GenJetsNoNuBSM_*_*",
      "keep *_kt6GenJetsNoNuBSM_*_*",
-     "keep *_kt10GenJetsNoNuBSM_*_*",
      "keep *_iterativeCone5GenJetsNoNuBSM_*_*",
-     "keep *_iterativeCone7GenJetsNoNuBSM_*_*",
-     "keep *_midPointCone5GenJetsNoNuBSM_*_*",
-     "keep *_midPointCone7GenJetsNoNuBSM_*_*",
      "keep *_sisCone5GenJetsNoNuBSM_*_*",
      "keep *_sisCone7GenJetsNoNuBSM_*_*",
 
-     "keep *_genParticleCandidates_*_*"
+     "keep *_genParticle_*_*"
   }
 }
 
@@ -89,16 +70,12 @@ block RecoJetsAOD = {
      "keep *_kt4CaloJets_*_*",
      "keep *_kt6CaloJets_*_*",
      "keep *_iterativeCone5CaloJets_*_*",
-     "keep *_iterativeCone7CaloJets_*_*",
-     "keep *_midPointCone5CaloJets_*_*",
-     "keep *_midPointCone7CaloJets_*_*",
      "keep *_sisCone5CaloJets_*_*",
      "keep *_sisCone7CaloJets_*_*",
      "keep *_caloTowers_*_*",
      "keep *_towerMaker_*_*",
      "keep *_ic5JetTracksAssociatorAtVertex_*_*",
      "keep *_iterativeCone5JetExtender_*_*",
-     "keep *_midPointCone5JetExtender_*_*",
      "keep *_sisCone5JetExtender_*_*",
      "keep *_kt4JetExtender_*_*"
   }
@@ -109,21 +86,15 @@ block RecoGenJetsAOD = {
      "keep *_kt4GenJetsPt10_*_*",
      "keep *_kt6GenJetsPt10_*_*",
      "keep *_iterativeCone5GenJetsPt10_*_*",
-     "keep *_iterativeCone7GenJetsPt10_*_*",
-     "keep *_midPointCone5GenJetsPt10_*_*",
-     "keep *_midPointCone7GenJetsPt10_*_*",
      "keep *_sisCone5GenJetsPt10_*_*",
      "keep *_sisCone7GenJetsPt10_*_*",
 
      "keep *_kt4GenJetsNoNuBSM_*_*",
      "keep *_kt6GenJetsNoNuBSM_*_*",
      "keep *_iterativeCone5GenJetsNoNuBSM_*_*",
-     "keep *_iterativeCone7GenJetsNoNuBSM_*_*",
-     "keep *_midPointCone5GenJetsNoNuBSM_*_*",
-     "keep *_midPointCone7GenJetsNoNuBSM_*_*",
      "keep *_sisCone5GenJetsNoNuBSM_*_*",
      "keep *_sisCone7GenJetsNoNuBSM_*_*",
 
-     "keep *_genParticleCandidates_*_*"
+     "keep *_genParticle_*_*"
   }
 }
