@@ -1,17 +1,8 @@
-# $Id: RecoJets.cff,v 1.10 2007/02/23 22:33:14 fedor Exp $
+# $Id: CaloTowersRec.cff,v 1.1 2007/02/26 21:06:09 fedor Exp $
 #
-# reconstruct CaloRecHits and create calotowers here
+# create calotowers here
 #
-
-  include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
-  include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
-  include "Geometry/CaloEventSetup/data/CaloTopology.cfi"
-  es_module = HcalTopologyIdealEP {}
-
-   #include "Geometry/CaloEventSetup/data/CaloTowerConstituents.cfi"
-  es_module = CaloTowerConstituentsMapBuilder {
-      untracked string MapFile="Geometry/CaloTopology/data/CaloTowerEEGeometric.map.gz"
-  }
+   include "RecoJets/Configuration/data/CaloTowersES.cfi"
 
   include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
 
