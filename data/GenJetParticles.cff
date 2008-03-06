@@ -1,46 +1,11 @@
 #
-# $Id: GenJetParticles.cff,v 1.5 2008/02/25 15:41:43 oehler Exp $
+# $Id: GenJetParticles.cff,v 1.6 2008/02/29 00:42:40 fedor Exp $
 #
 # ShR 27 Mar 07: move modules producing candidates for Jets from RecoGenJets.cff
 # 
 #
-  include "PhysicsTools/HepMCCandAlgos/data/genParticleCandidatesFast.cfi"
-  include "SimGeneral/HepPDTESSource/data/pythiapdt.cfi"
+module genParticlesForJets = GenJetParticleSelector {
+ InputTag src = "genParticles"
+}
 
-#  module genParticlesAllStable = GenParticleCandidateSelector {
-#   string src = "genParticleCandidates"
-#   bool stableOnly = true
-#   untracked bool verbose = false
-#   vstring excludeList = {}
-#   vstring includeList = {}
-#  }
-
-  module genParticlesAllStableNoNuBSM = GenJetParticleRefSelector {
-   InputTag src = "genParticles"
-   bool stableOnly = true
-   untracked bool verbose = false
-   vstring excludeList = {"nu_e", "nu_mu", "nu_tau",
-                          "~chi_10", 
-                          "~nu_eR", "~nu_muR", "~nu_tauR", 
-			  "Graviton", "~Gravitino", 
-                          "nu_Re", "nu_Rmu", "nu_Rtau", 
-                          "nu*_e0", "Graviton*"
-                         }
-   vstring includeList = {}
-  }
-
-   module genParticlesAllStable = GenJetParticleRefSelector {
-           InputTag src = "genParticles"
-           bool stableOnly = true
-           untracked bool verbose = false
-           vstring excludeList = {}
-           vstring includeList = {}
-        }
-
-
-# ShR 27 Mar 2007
-# NB: genJetParticles sequence MUST be executed before recoGenJets and recoGenMET
-# See example in  Configuration/StandardSequences/data/RecoSim.cff
-#
-#sequence genJetParticles  = { genParticleCandidates, (genParticlesAllStable & genParticlesAllStableNoNuBSM) }
-sequence genJetParticles  = { genParticlesAllStable & genParticlesAllStableNoNuBSM }
+sequence genJetParticles  = { genParticlesForJets }

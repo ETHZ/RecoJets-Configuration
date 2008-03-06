@@ -54,12 +54,6 @@ block RecoGenJetsRECO = {
      "keep *_sisCone5GenJets_*_*",
      "keep *_sisCone7GenJets_*_*",
 
-     "keep *_kt4GenJetsNoNuBSM_*_*",
-     "keep *_kt6GenJetsNoNuBSM_*_*",
-     "keep *_iterativeCone5GenJetsNoNuBSM_*_*",
-     "keep *_sisCone5GenJetsNoNuBSM_*_*",
-     "keep *_sisCone7GenJetsNoNuBSM_*_*",
-
      "keep *_genParticle_*_*"
   }
 }
@@ -83,17 +77,11 @@ block RecoJetsAOD = {
 
 block RecoGenJetsAOD = {
   untracked vstring outputCommands = {
-     "keep *_kt4GenJetsPt10_*_*",
-     "keep *_kt6GenJetsPt10_*_*",
-     "keep *_iterativeCone5GenJetsPt10_*_*",
-     "keep *_sisCone5GenJetsPt10_*_*",
-     "keep *_sisCone7GenJetsPt10_*_*",
-
-     "keep *_kt4GenJetsNoNuBSM_*_*",
-     "keep *_kt6GenJetsNoNuBSM_*_*",
-     "keep *_iterativeCone5GenJetsNoNuBSM_*_*",
-     "keep *_sisCone5GenJetsNoNuBSM_*_*",
-     "keep *_sisCone7GenJetsNoNuBSM_*_*",
+     "keep *_kt4GenJets_*_*",
+     "keep *_kt6GenJets_*_*",
+     "keep *_iterativeCone5GenJets_*_*",
+     "keep *_sisCone5GenJets_*_*",
+     "keep *_sisCone7GenJets_*_*",
 
      "keep *_genParticle_*_*"
   }
