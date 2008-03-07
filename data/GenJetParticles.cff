@@ -1,10 +1,10 @@
 #
-# $Id: GenJetParticles.cff,v 1.6 2008/02/29 00:42:40 fedor Exp $
+# $Id: GenJetParticles.cff,v 1.7 2008/03/06 00:55:34 fedor Exp $
 #
 # ShR 27 Mar 07: move modules producing candidates for Jets from RecoGenJets.cff
 # 
 #
-module genParticlesForJets = GenJetParticleSelector {
+module genParticlesForJets = GenJetInputParticleSelector {
  InputTag src = "genParticles"
 }
 
