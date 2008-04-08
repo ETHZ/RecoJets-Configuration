@@ -1,0 +1,22 @@
+# $Id: RecoJets.cff,v 1.19 2008/02/29 00:42:40 fedor Exp $
+#
+
+include "RecoJets/JetProducers/data/CaloJetParameters.cfi"
+include "RecoJets/JetProducers/data/IconeJetParameters.cfi"
+
+module iterativeCone5CaloJets = IterativeConeJetProducer {
+       untracked string alias = "IC5CaloJet"
+       using IconeJetParameters
+       using CaloJetParameters
+       double coneRadius = 0.5
+}
+
+module iterativeCone15CaloJets = IterativeConeJetProducer {
+       untracked string alias = "IC15CaloJet"
+       using IconeJetParameters
+       using CaloJetParameters
+       double seedThreshold = 0.5
+       double coneRadius = 0.15
+}
+
+sequence recoJetsGR = {iterativeCone5CaloJets & iterativeCone15CaloJets}
