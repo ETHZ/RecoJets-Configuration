@@ -1,16 +1,7 @@
-# $Id: RecoJets.cff,v 1.19 2008/02/29 00:42:40 fedor Exp $
+# $Id: RecoJetsGR.cff,v 1.1 2008/04/08 20:22:09 fedor Exp $
 #
 
-include "RecoJets/JetProducers/data/CaloJetParameters.cfi"
-include "RecoJets/JetProducers/data/IconeJetParameters.cfi"
-
-module iterativeCone5CaloJets = IterativeConeJetProducer {
-       untracked string alias = "IC5CaloJet"
-       using IconeJetParameters
-       using CaloJetParameters
-       double coneRadius = 0.5
-}
-
+# special R=0.15 IC jets:
 module iterativeCone15CaloJets = IterativeConeJetProducer {
        untracked string alias = "IC15CaloJet"
        using IconeJetParameters
@@ -19,4 +10,17 @@ module iterativeCone15CaloJets = IterativeConeJetProducer {
        double coneRadius = 0.15
 }
 
-sequence recoJetsGR = {iterativeCone5CaloJets & iterativeCone15CaloJets}
+# Standard set:
+include "RecoJets/JetProducers/data/kt4CaloJets.cff"
+include "RecoJets/JetProducers/data/kt6CaloJets.cff"
+include "RecoJets/JetProducers/data/iterativeCone5CaloJets.cff"
+include "RecoJets/JetProducers/data/sisCone5CaloJets.cff"
+include "RecoJets/JetProducers/data/sisCone7CaloJets.cff"
+
+
+sequence recoJetsGR = {
+   iterativeCone15CaloJets &
+   kt4CaloJets & kt6CaloJets &  
+   iterativeCone5CaloJets & 
+   sisCone5CaloJets & sisCone7CaloJets
+}
