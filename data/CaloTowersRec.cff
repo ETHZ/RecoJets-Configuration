@@ -1,4 +1,4 @@
-# $Id: CaloTowersRec.cff,v 1.1 2007/02/26 21:06:09 fedor Exp $
+# $Id: CaloTowersRec.cff,v 1.2 2008/03/06 16:10:29 fedor Exp $
 #
 # create calotowers here
 #
@@ -6,9 +6,4 @@
 
   include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
 
-  module caloTowers = CaloTowerCandidateCreator {
-           InputTag src = towerMaker
-           double minimumEt = -1
-           double minimumE = -1
-   }
-sequence caloTowersRec = { towerMaker, caloTowers }
+sequence caloTowersRec = { towerMaker }

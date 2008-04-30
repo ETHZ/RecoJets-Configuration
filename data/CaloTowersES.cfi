@@ -1,4 +1,4 @@
-# $Id: CaloTowersES.cfi,v 1.1 2008/03/06 16:10:29 fedor Exp $
+# $Id: CaloTowersES.cfi,v 1.2 2008/04/23 14:50:32 tboccali Exp $
 #
 # Event Setup necessary for CaloTowers reconstruction
 #
@@ -7,7 +7,8 @@
   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
   include "Geometry/CaloEventSetup/data/CaloTopology.cfi"
 # removed as in the request by Brian K. Heltsley
-#  es_module = HcalTopologyIdealEP {}
+# F.R. Apr.30 2008: put it back as otherwise it breaks CaloTower production
+  es_module = HcalTopologyIdealEP {}
 
    #include "Geometry/CaloEventSetup/data/CaloTowerConstituents.cfi"
   es_module = CaloTowerConstituentsMapBuilder {
