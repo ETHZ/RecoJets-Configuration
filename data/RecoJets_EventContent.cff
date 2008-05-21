@@ -87,6 +87,12 @@ block RecoJetsAOD = {
      "keep *_sisCone7CaloJets_*_*",
      "keep *_towerMaker_*_*",
      "keep *_ic5JetTracksAssociatorAtVertex_*_*",
+     "keep *_iterativeCone5JetTracksAssociatorAtVertex_*_*",
+     "keep *_iterativeCone5JetTracksAssociatorAtCaloFace_*_*",
+     "keep *_sisCone5JetTracksAssociatorAtVertex_*_*",
+     "keep *_sisCone5JetTracksAssociatorAtCaloFace_*_*",
+     "keep *_kt4JetTracksAssociatorAtVertex_*_*",
+     "keep *_kt4JetTracksAssociatorAtCaloFace_*_*",
      "keep *_iterativeCone5JetExtender_*_*",
      "keep *_sisCone5JetExtender_*_*",
      "keep *_kt4JetExtender_*_*"
