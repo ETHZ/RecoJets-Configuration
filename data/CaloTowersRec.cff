@@ -1,9 +1,0 @@
-# $Id: CaloTowersRec.cff,v 1.2 2008/03/06 16:10:29 fedor Exp $
-#
-# create calotowers here
-#
-   include "RecoJets/Configuration/data/CaloTowersES.cfi"
-
-  include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
-
-sequence caloTowersRec = { towerMaker }
