@@ -41,7 +41,8 @@ gk7GenJetsNoMuNoNu = gk7GenJets.clone( src = cms.InputTag("genParticlesForJetsNo
 ca4GenJetsNoMuNoNu = ca4GenJets.clone( src = cms.InputTag("genParticlesForJetsNoMuNoNu") )
 ca6GenJetsNoMuNoNu = ca6GenJets.clone( src = cms.InputTag("genParticlesForJetsNoMuNoNu") )
 
-recoGenJets   =cms.Sequence(kt4GenJets+kt6GenJets+
+recoGenJets   =cms.Sequence(sisCone5GenJets+sisCone7GenJets+
+                            kt4GenJets+kt6GenJets+
                             iterativeCone5GenJets+
                             ak5GenJets+ak7GenJets)
 
